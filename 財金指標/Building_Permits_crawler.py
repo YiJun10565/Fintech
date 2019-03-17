@@ -1,4 +1,5 @@
 from selenium import webdriver
+import pandas as pd
 import time
 url = "https://www.census.gov/construction/bps/uspermits.html?fbclid=IwAR02DAW5FBC-At1R0g8qV_kFxrry7aIK5l1lfb--XDCLehPDUIlQ6r0lz8c"
 
@@ -10,8 +11,6 @@ options.add_experimental_option('prefs', prefs)
 driver = webdriver.Chrome(chrome_options=options)
 driver.get(url)
 
+excel_data = driver.find_element_by_xpath("//a[@href='/construction/nrc/xls/permits_cust.xls']").click()
 
-#在網頁中找尋"Download Data並點擊"
-driver.find_element_by_xpath("//a[@href='/construction/nrc/xls/permits_cust.xls']").click()
-time.sleep(5)
 driver.close()
