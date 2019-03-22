@@ -13,7 +13,7 @@ ETF爬蟲的部分，執行"ETF/ETF.ipynb"後，會將下載下來的資料存�
 - 我們選擇selenium，因為可以直接模擬人點擊下載的過程，速度也不會太慢。
 
 ### 2.請用流程圖的方式告訴我們你是怎麼抓到你的目標資料，流程圖的畫法不拘，主要易懂就好
-- ETF：[imgur](https://imgur.com/GzeV37.jpg)
+- ETF：[ETF流程圖](https://imgur.com/GzeV37)
 - 財金指標：
 ### 3.至少設想並列出 5 種當別人使用你的程式最有可能會遇到的錯誤情況，並提供解決辦法
     1. module xxx is not defined -> 代表使用者可能沒有安裝套件。
