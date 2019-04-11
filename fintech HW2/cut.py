@@ -12,6 +12,7 @@ wfp.close()
 
 while list:
     list = list.strip('\n') 
+    list = "./data/"+list
     content = open(list, 'rb').read()
     tags = janal.extract_tags(content, 50)
 
