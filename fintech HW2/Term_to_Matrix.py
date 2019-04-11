@@ -30,6 +30,35 @@ while line:
 			SparseMatrix[tag_t][tag_s] += 1
 	line = fp.readline()
 fp.close()
+
+wp = open('drawdata_edge.csv', 'w', encoding='utf-8')
+wp2 = open('drawdata_node.csv', 'w', encoding='utf-8')
+wp.write("Source,Target,weight\n")
+wp2.write("id,Label,interval\n")
+i=0
+for tag in TagList:
+    j=0
+    cnt=0
+    for tag in TagList:
+        if(SparseMatrix[i][j] > 5):
+            cnt+=SparseMatrix[i][j]
+            wp.write(TagList[i])
+            wp.write(",")
+            wp.write(TagList[j])
+            wp.write(",")
+            wp.write(str(SparseMatrix[i][j]))
+            wp.write("\n")
+        j=j+1
+    i=i+1
+    if cnt > 0:
+        wp2.write(TagList[i])
+        wp2.write(",")
+        wp2.write(TagList[i])
+        wp2.write(",")
+        wp2.write(str(cnt))
+        wp2.write("\n")
+wp2.close()
+wp.close()
 # sparse matrix as readible file
 wp = open('SparseMatrix.txt', 'w', encoding='utf-8')
 wp.write("        ")
@@ -62,4 +91,3 @@ for t in range(TagCount):
 	wp.write(' ')
 	wp.write(TagList[t])
 	wp.write('\n')
-print(SparseMatrix)
