@@ -13,7 +13,7 @@ wfp.close()
 while list:
     list = list.strip('\n') 
     content = open(list, 'rb').read()
-    tags = janal.extract_tags(content, 10)
+    tags = janal.extract_tags(content, 50)
 
     fpn = open(list, 'r')
     for(line, value) in enumerate(fpn):
