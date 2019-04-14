@@ -1,0 +1,6 @@
+〔即時新聞／綜合報導〕根據科技網站engadget報導，就在各大網站為了反SOPA法案主動關站之後一天，美國司法部強制關閉了最大的檔案分享下載網站「Megaupload」，並且逮捕與起訴該站創辦人金德康（Kim Dotcom）、歐特曼（Mathias Ortmann）、市場行銷主管巴塔托（Finn Batato）、研發主管艾希特納赫（Sven Echternach）和其他高層主管共7人。
+engadget分析，美司法部起訴書用詞強烈，稱Megaupload為「有組織的國際犯罪企業，應當為大規模的國際線上盜版負責」，並且為創辦人金德康（Kim Dotcom）帶來了1.75億美元的不法所得，同時造成版權擁有人5億美元的損失。
+美司法部於是以詐騙錢財、洗錢與侵犯版權等罪名起訴Megaupload相關人士。engadget指出，此次起訴罪名相當驚人，因為從詐騙錢財、洗錢的各 20 年有期徒刑，到侵犯版權的 5 年，罪名非常重。
+engadget分析指出，Megaupload常年遊走於灰色地帶，該站擁有大量盜版軟體、音樂、電影，但是該站長期宣稱所有內容為使用者上傳，網站對上傳內容不知情，並藉此當作保護傘。而這保護傘也代表了SOPA法案準備杜絕的重要漏洞之一，因此各方都把這次的行動視SOPA攻防的前哨戰。
+在網民方面，駭客組織「Anonymous」隨即對美國司法部、FBI等官方網站，以及美國電影協會（Motion Picture Association of America，簡稱MPAA）、美國唱片業協會（Recording Industry Association of America，簡稱：RIAA）、環球唱片（Universal）等進行了分散式阻斷服務攻擊（Distributed Denial of Service）攻擊，到現在近12個小時後，美國唱片業協會的網站依然無法連線。
+此外，也有台灣網友指出，好在還有中國，那邊就算非法的美國也不能抄。更有網友嗆，「真是諷刺，共產主義比民主更自由。」

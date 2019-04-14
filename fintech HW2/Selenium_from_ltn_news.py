@@ -1,16 +1,14 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import ElementNotVisibleException                
+from selenium import webdriver              
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup as bs
 import datetime
 import time
+import calendar
 import pandas as pd
 
-#coding=utf-8
+#encoding=utf-8
 #option = webdriver.ChromeOptions()
 #option.add_argument('headless')
 #option.add_argument('window-size=1200x600')
@@ -29,74 +27,87 @@ emp = "&EMonth="
 edp = "&EDay="
 now = datetime.datetime.now()
 
-Year = []
-for i in range(2005, now.year+1):
-	Year.append(i)
-Smonth = []
-Emonth = []
-for i in range(1, 12, 3):
-	Smonth.append(i)
-	Emonth.append(i+2)
-Sdate = [1, 1, 1, 1]
-Edate = [31, 30, 30, 31]
-
 #for y in Year:
 #	for i in range(4):
 #			print("from ", y, '/', Smonth[i], '/1 to ', y, '/', Emonth[i], '/', Edate[i])
 
 ltn_news_link = []
-for y in Year:
-	for m in range(4):
-		if(y == now.year and 3*m >= now.month):
+for y in range(2005, now.year +1):
+	for m in range(1, 12+1):
+		if(y == now.year and m > now.month):
 			break
-		url = base_url + syp + str(y) + smp + str(Smonth[m]) + sdp + str(Sdate[m])
-		if(y == now.year and 3*(m+1) >= now.month):
-			url = url + eyp + str(y) + emp + str(now.month) + edp + str(now.day) 
+		url = base_url + syp + str(y) + smp + str(m) + sdp + '1'
+		url = url + eyp + str(y) + emp + str(m) + edp
+		if(y == now.year and m == now.month):
+			url += str(now.day) 
 		else:
-			url = url + eyp + str(y) + emp + str(Emonth[m]) + edp + str(Edate[m])
+			url += str( calendar.monthrange(y, m)[1])
 		#print(url)
 		ltn_news_link.append(url)
+#for link in ltn_news_link:
+#	print(link)
 
 option = webdriver.ChromeOptions()
-#option.add_argument('headless')
+option.add_argument('headless')
 option.add_argument('window-size=1200x600')
 browser = webdriver.Chrome(options=option)
 
 news_count = 0
-news_title_list = []
-news_link_list = []
-test_link = []
-test_link.append(ltn_news_link[0])
-for link in test_link:	
+
+#the file has a "-1" at the end 
+#make sure we won't accidentally rewrite the data since it takes really long time
+fp_link = open("./news_link_list-1.txt", 'w', encoding='utf-8')
+fp_title = open("./news_title_list-1.txt", 'w', encoding='utf-8')
+
+for link in ltn_news_link :	
 	print(link)
 	browser.get(link)
+	break_flag = False
 	# colecting link for a single page of a list 
-	while True :
-		tmp_list = browser.find_elements_by_class_name("tit")
-		for e in tmp_list:
-			news_title_list.append(e.text)
-			news_link_list.append(e.get_attribute('href'))
-			#print(news_title_list[news_count], ' : ', news_link_list[news_count])
-			news_count += 1
-		p_next = browser.find_element_by_class_name('p_next')
-		print(dir(p_next))
-		if not p_next.is_displayed():
+	while not break_flag :
+		try:
+			time.sleep(5)
+#			tmp_list = browser.find_elements_by_class_name("tit")
+			WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "tit")))
+		except:
+			print('Can\'t find the title')
 			break
 		else:
+			tmp_list = browser.find_elements_by_class_name("tit")
+			flag = 0
+			length = len(tmp_list)
+			for e in tmp_list:
+			#news_title_list.append(e.text)
+			#news_link_list.append(e.get_attribute('href'))
+			#print(news_title_list[news_count], ' : ', news_link_list[news_count])
+				t = e.text
+				l = e.get_attribute('href')
+				fp_title.write(t)
+				fp_title.write('\n')
+				fp_link.write(l)
+				fp_link.write('\n')
+				news_count += 1
+				flag += 1
+				print(news_count)
+		print(flag, length)	
+		try:
+			time.sleep(5)
+			#make sure that the above processing are all done
+			p_next = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "p_next")))
 			p_next.click()
+			print('Turn Page')
+		except:
+			break_flag = True
 #	tit_list = browser.find_elements_by_class_name('tit')
 #	for tit in tit_list:
 #		print(tit)
 #		print(tit.text)
 #	print(tit_list)
 #	
-for i in range(news_count):
-	print( news_title_list[i], ' : ', news_link_list[i])
-print(news_count)
 try:
 	browser.close()
 except :
 	print('Webdriver Closing Error')
 else:
 	print("done")
-  #  Title_list.append(tit['data-desc'])
+
