@@ -25,7 +25,9 @@ Yahoo finance
 
 ## 績效評比
 
-![績效資料](pic.png）
+績效資料: [績效](https://imgur.com/UQv3sY1)
+已建立績效的週資料、月資料，尚未排名完成
+
 
 #### 不同指標結果
 
