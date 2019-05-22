@@ -36,17 +36,19 @@ Yahoo finance
 
 以XLB此檔ETF作為範例畫出Omega月資料排名狀況
 ![Omega月資料排名圖表](/pic/mOmega_rank_plot.png)
+
 Omega值與ASKSR值的排名狀況，可發現以兩者比率進行報酬排名的差異性大
 ![月資料排名比較圖表](/pic/mm_comparison.png)
 
 
 週排名狀況
-![Omega週資料排名圖表](/pic/mOmega_rank_plot.png)
+![Omega週資料排名圖表](pic/mOmega_rank_plot.png)
 
-可看出投資標的的排名變動幅度大
+![週資料排名比較圖表](pic/ww_comparison.png)
+
+可看出投資標的依據不同績效評比指標的排名變動幅度大
 
 #### 週資料 vs. 月資料
-
 
 ## 投資策略
 * 可藉由前一期的績效評比決定本期投資標的，如以績效最好的前10檔基金組成投組進行投資。但須每期調整，月資料較為合適
