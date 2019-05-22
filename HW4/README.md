@@ -24,20 +24,26 @@ Yahoo finance
 計算方式： 下載ETF的5年歷史資料，利用rolling window的方式，以3年時間計算以上三指標（156 w or 36 m）
 
 ## 績效評比
+以Omega月資料為範例
 
 績效資料:
-![績效](pic.png)
-![Omega週資料排名](wOmega_rank.png)
-![Omega月資料排名](mOmega_rank.png)
-![ASKSR週資料排名](wASKSR_rank.png)
-![ASKSR月資料排名](mASKSR_rank.png)
-
-已建立績效的週資料、月資料，尚未排名完成
-
+![績效](/pic/mOmega.png)
 
 #### 不同指標結果
 
+* Omega月資料排名
+![Omega月資料排名](/pic/mOmega_rank.png)
 
+以XLB此檔ETF作為範例畫出Omega月資料排名狀況
+![Omega月資料排名圖表](/pic/mOmega_rank_plot.png)
+Omega值與ASKSR值的排名狀況，可發現以兩者比率進行報酬排名的差異性大
+![月資料排名比較圖表](/pic/mm_comparison.png)
+
+
+週排名狀況
+![Omega週資料排名圖表](/pic/mOmega_rank_plot.png)
+
+可看出投資標的的排名變動幅度大
 
 #### 週資料 vs. 月資料
 
