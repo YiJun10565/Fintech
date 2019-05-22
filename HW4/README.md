@@ -25,7 +25,12 @@ Yahoo finance
 
 ## 績效評比
 
-績效資料: [績效](https://imgur.com/UQv3sY1)
+績效資料:
+![績效](pic.png)
+![Omega週資料排名](wOmega_rank.png)
+![Omega月資料排名](mOmega_rank.png)
+![ASKSR週資料排名](wASKSR_rank.png)
+![ASKSR月資料排名](mASKSR_rank.png)
 
 已建立績效的週資料、月資料，尚未排名完成
 
