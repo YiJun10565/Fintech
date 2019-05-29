@@ -17,7 +17,10 @@ import pandas as pd
 
 
 # list of link constructing 
-base_url = "https://news.ltn.com.tw/search/?keyword=%E6%B4%97%E9%8C%A2&conditions=and"
+
+keywords = ['洗錢', '金融詐欺', '武器擴散', '毒品走私', '恐怖主義', '毒品犯運', '貪污', '賄賂', '詐欺', '走私', '稅務犯罪', '內線交易', '市場操控', '專業洗錢', '組織犯罪']
+
+base_url = "https://news.ltn.com.tw/search/?keyword=&conditions=and"
 #start year part , ...
 syp = "&SYear="
 smp = "&SMonth="
