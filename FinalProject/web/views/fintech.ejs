@@ -1,0 +1,26 @@
+<html style="height: 100vh">
+    <head>
+        <meta charset="utf-8">
+        <title> 防洗錢資料庫 </title>
+    </head>
+    <body>
+        <table style="width: 100vw;" border='1'>
+        <tr>
+            <th style="width: 6vw;">name</th>
+            <th>sentence</th>
+        </tr>
+        <% for ( var i = 0 ; i < data.length ; i++){ %>
+            <% if (data[i].name == Name){ %>
+            <tr>
+                <td>
+                    <%= data[i].name %>
+                </td>
+                <td>
+                    <%= data[i].sentence %>
+                </td>
+                <% } %>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>
