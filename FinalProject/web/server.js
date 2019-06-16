@@ -9,9 +9,9 @@ app.use(bodyParser.json());
 var mysql = require('mysql');
 var con = mysql.createConnection({
     host    : 'localhost',
-    user    : 'root',
-    password: 'Song0815',
-    database: 'fintech'
+    user    : '[username]',
+    password: '[password]',
+    database: '[dbname]'
 });
 
 
