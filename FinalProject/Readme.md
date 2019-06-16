@@ -7,9 +7,9 @@
     enter password
 4. mysql> create database [dbname];
 5. mysql> use [dbname];
-6. mysql> CREATE TABLE data(name VARSHAR(255), sentence VARCHAR(255));
+6. mysql> CREATE TABLE [tablename](name VARSHAR(255), sentence VARCHAR(255));
 7. mysql> SET GLOBAL local_infile=1;
-8. mysql> LOAD DATA LOCAL INFILE 'Final_text.txt' INTO TABLE data COLUMNS TERMINATED BY '\t';
+8. mysql> LOAD DATA LOCAL INFILE 'Final_text.txt' INTO TABLE [tablename] COLUMNS TERMINATED BY '\t';
 9. mysql> exit
 10. in server.js line 12~14 -> type your [username], [password] and [dbname]
 11. node sever.js
